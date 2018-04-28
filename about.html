@@ -143,13 +143,13 @@
                         Y = moveEndY - startY;
 
                     if (Y > 0) {
-                        documentScroll(true)
+                        documentScroll(false)
 
                     }
                     //上滑
                     else if (Y < 0) {
                         // alert("")
-                        documentScroll(false)
+                        documentScroll(true)
 
                     }
                     //单击
@@ -159,30 +159,38 @@
                 });
             } else {
                 //  pc
+                var scrolled = 0;
                 var scroll = function (e) {
-                    var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) || // chrome & ie
-                        (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1)); // firefox
-                    documentScroll(delta > 0);
+                    // fixed mac 触摸板bug
+                    if ((new Date()).getTime() - scrolled > 1500) {
+                        var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) || // chrome & ie
+                            (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1)); // firefox
+
+                        documentScroll(delta > 0);
+                    }
                     return false;
                 }
                 $(document.body).on('mousewheel DOMMouseScroll ', _.debounce(scroll, 250, {
-                    'maxWait': 1
+                    maxWait: 0
                 }))
+                // $(document.body).on('mousewheel DOMMouseScroll ', scroll)
             }
             // 文档滚动
             function documentScroll(direction) {
-                console.log(direction)
-                var top = $('html,body').scrollTop();
+                scrolled = (new Date()).getTime();
+                var top = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+
+                if (top % fullscreenHeight) {
+                    return;
+                }
+
                 var origin = top;
-                alert('origin' + origin);
                 if (direction) {
                     // 向上滚
                     top = top === 0 ? top : top - fullscreenHeight;
-                    alert(top);
                 } else {
                     // 向下滚
                     top = top >= 2 * fullscreenHeight ? top : top + fullscreenHeight;
-                    alert(top);
                 }
                 origin !== top && $("html,body").animate({
                     "scrollTop": top
