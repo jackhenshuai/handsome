@@ -12,12 +12,12 @@ body {
     border-bottom-width: 0;
 }
 
-.article .ui.navigator {
+ .ui.navigator {
     margin: 0 0 1rem;
 
 }
 
-.article .navigator .ui.segment {
+ .navigator .ui.segment {
     border-width: 0;
 }
 
@@ -40,10 +40,13 @@ body {
     border-radius: 0 !important;
 
 }
-.article .right.menu .item{
+.ui.navigator .right.menu .item{
     position: relative !important;
 }
-.article .right.menu .activeitem.item:after{
+.ui.navigator .right.menu .item:active{
+    border:none !important;
+}
+.ui.navigator .right.menu .activeitem.item:after{
     display: initial !important;
     visibility: visible !important;
     border:none !important;
