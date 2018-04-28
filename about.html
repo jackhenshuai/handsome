@@ -144,23 +144,17 @@
 
                     if (Y > 0) {
                         documentScroll(true)
-                        setTimeout(() => {
-                            alert('下')
-                        }, 1000);
+
                     }
                     //上滑
                     else if (Y < 0) {
                         // alert("")
                         documentScroll(false)
-                        setTimeout(() => {
-                            alert('上')
-                        }, 1000);
+
                     }
                     //单击
                     else {
-                        setTimeout(() => {
-                            alert('单击')
-                        }, 1000);
+
                     }
                 });
             } else {
@@ -180,12 +174,15 @@
                 console.log(direction)
                 var top = $('html,body').scrollTop();
                 var origin = top;
+                alert('origin' + origin);
                 if (direction) {
                     // 向上滚
                     top = top === 0 ? top : top - fullscreenHeight;
+                    alert(top);
                 } else {
                     // 向下滚
                     top = top >= 2 * fullscreenHeight ? top : top + fullscreenHeight;
+                    alert(top);
                 }
                 origin !== top && $("html,body").animate({
                     "scrollTop": top
