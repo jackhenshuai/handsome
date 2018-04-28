@@ -127,6 +127,9 @@
                     }
                     startX = e.originalEvent.changedTouches[0].pageX,
                         startY = e.originalEvent.changedTouches[0].pageY;
+                    setTimeout(() => {
+                        alert('出没了')
+                    }, 1000);
                 });
                 $('.fullscreen').on("touchend", function (e) {
                     // 判断默认行为是否可以被禁用
