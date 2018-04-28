@@ -23,6 +23,7 @@
     <style>
         * {
             touch-action: none;
+            -ms-touch-action:none;
         }
 
         ::-webkit-scrollbar {
@@ -81,7 +82,7 @@
         </div>
     </div>
     <div class="fullscreen  green">
-        <div class="ui text center aligned container">
+        <div class="ui text center aligned container ">
             <h1>page2</h1>
         </div>
     </div>
@@ -132,7 +133,7 @@
             }
 
             function mobilePlatform() {
-                $("body").on("touchstart", function (e) {
+                $('html,body').on("touchstart", function (e) {
                     // 判断默认行为是否可以被禁用
                     if (e.cancelable) {
                         // 判断默认行为是否已经被禁用
@@ -143,7 +144,7 @@
                     startX = e.originalEvent.changedTouches[0].pageX,
                         startY = e.originalEvent.changedTouches[0].pageY;
                 });
-                $("body").on("touchend", function (e) {
+                $('html,body').on("touchend", function (e) {
                     // 判断默认行为是否可以被禁用
                     if (e.cancelable) {
                         // 判断默认行为是否已经被禁用
