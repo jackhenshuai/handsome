@@ -104,6 +104,11 @@
         };
 
         $(function () {
+            $('img.logo').hover(function () {
+                $(this).parent().addClass('animated jello')
+            }, function () {
+                $(this).parent().removeClass('animated jello')
+            });
             $(window).load(function () {
                 console.log('加载完成')
                 // $('html,body').scrollTop(0)
@@ -143,13 +148,13 @@
                         Y = moveEndY - startY;
 
                     if (Y > 0) {
-                        documentScroll(false)
+                        documentScroll(true)
 
                     }
                     //上滑
                     else if (Y < 0) {
                         // alert("")
-                        documentScroll(true)
+                        documentScroll(false)
 
                     }
                     //单击
@@ -179,7 +184,6 @@
             function documentScroll(direction) {
                 scrolled = (new Date()).getTime();
                 var top = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
-
                 if (top % fullscreenHeight) {
                     return;
                 }
