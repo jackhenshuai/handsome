@@ -133,7 +133,7 @@
             }
 
             function mobilePlatform() {
-                $('html,body').on("touchstart", function (e) {
+                $('.fullscreen').on("touchstart", function (e) {
                     // 判断默认行为是否可以被禁用
                     if (e.cancelable) {
                         // 判断默认行为是否已经被禁用
@@ -144,7 +144,7 @@
                     startX = e.originalEvent.changedTouches[0].pageX,
                         startY = e.originalEvent.changedTouches[0].pageY;
                 });
-                $('html,body').on("touchend", function (e) {
+                $('.fullscreen').on("touchend", function (e) {
                     // 判断默认行为是否可以被禁用
                     if (e.cancelable) {
                         // 判断默认行为是否已经被禁用
