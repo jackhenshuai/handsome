@@ -124,7 +124,7 @@
                 var scroll = function (e) {
                     var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) || // chrome & ie
                         (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1)); // firefox
-                    documentScroll(documentScroll > 0);
+                    documentScroll(delta > 0);
                     return false;
                 }
                 $(document.body).on('mousewheel DOMMouseScroll ', _.debounce(scroll, 250, {
