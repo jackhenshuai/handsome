@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Cache-Control" content="max-age=7200" />
     <!-- <link rel="stylesheet" href="assets/SemanticUI/components/reset.min.css"> -->
-    <link rel="stylesheet" href="assets/SemanticUI/semantic.min.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="assets/SemanticUI/semantic.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="assets/library/jquery.min.js"></script>
-    <script src="assets/SemanticUI/semantic.min.js"></script>
+    <script src="assets/SemanticUI/semantic.js"></script>
     <title>lyl的大公鸡</title>
-   
+
 </head>
 
 <body>
@@ -25,8 +28,8 @@
                                 <img class="logo" src="assets/images/logo.png">
                             </div>
                             <div class="right three menu">
-                                <a href="#" class=" grey item">关于</a>
-                                <a href="#" class="active grey item">作品</a>
+                                <a href="#" class="grey item">关于</a>
+                                <a href="#" class="activeitem grey item">作品</a>
                                 <a href="#" class="grey item">文章</a>
                                 <a href="mailto:547705038@qq.com?subject=来自github pages" class="grey item">联系作者</a>
                             </div>
@@ -39,9 +42,27 @@
 
         <div class="ui container body" id="context">
             <div class="ui three column doubling stackable grid container">
-
                 <div class="column">
                     <div class="ui link cards centered">
+                        <div class="ui inverted dimmer">
+                            <div class="ui loader"></div>
+                        </div>
+                        <div class="card noradius">
+                            <div class="image">
+                                <img class="noradius " src="assets/images/img.png">
+                            </div>
+                            <div class="content">
+                                <div class="header">大鸡公</div>
+                                <div class="description">本人画的大鸡公，是不是很帅</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui link cards centered">
+                        <div class="ui inverted dimmer">
+                            <div class="ui loader"></div>
+                        </div>
                         <div class="card noradius">
                             <div class="image">
                                 <img class="noradius" src="assets/images/img.png">
@@ -55,6 +76,9 @@
                 </div>
                 <div class="column">
                     <div class="ui link cards centered">
+                        <div class="ui inverted dimmer">
+                            <div class="ui loader"></div>
+                        </div>
                         <div class="card noradius">
                             <div class="image">
                                 <img class="noradius" src="assets/images/img.png">
@@ -68,6 +92,9 @@
                 </div>
                 <div class="column">
                     <div class="ui link cards centered">
+                        <div class="ui inverted dimmer">
+                            <div class="ui loader"></div>
+                        </div>
                         <div class="card noradius">
                             <div class="image">
                                 <img class="noradius" src="assets/images/img.png">
@@ -81,6 +108,9 @@
                 </div>
                 <div class="column">
                     <div class="ui link cards centered">
+                        <div class="ui inverted dimmer">
+                            <div class="ui loader"></div>
+                        </div>
                         <div class="card noradius">
                             <div class="image">
                                 <img class="noradius" src="assets/images/img.png">
@@ -95,15 +125,15 @@
             </div>
         </div>
     </div>
-
+    <!-- -->
     <script>
-        (function ($) {
-            $('.ui.sticky')
-                .sticky({
-                    context: '#context',
-                });
-
-        })(jQuery)
+        $(function () {
+            $('.ui.cards').dimmer('show')
+            $('img').load(function () {
+               var $this = $(this);
+               $this.parentsUntil('.column','.cards').dimmer('hide')
+            });
+        });
     </script>
 </body>
 

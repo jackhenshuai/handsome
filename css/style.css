@@ -32,11 +32,29 @@ body {
 }
 
 .article .card {
-    box-shadow: 0px 2px 9px #ccc !important;
+    box-shadow: 0px 2px 9px #eaeaea !important;
     width: 100% !important;
 }
 
 .article .noradius {
     border-radius: 0 !important;
 
+}
+.article .right.menu .item{
+    position: relative !important;
+}
+.article .right.menu .activeitem.item:after{
+    display: initial !important;
+    visibility: visible !important;
+    border:none !important;
+    transform: none !important;
+    content: '';
+    position: absolute;
+    background-color: rgba(0,0,0,.87) !important;
+    width: auto;
+    height: 1px !important;
+    top: auto;
+    left:  1.14285714em !important;
+    right:  1.14285714em !important;
+    bottom: .55714286em !important;
 }
