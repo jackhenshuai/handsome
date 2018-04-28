@@ -23,7 +23,7 @@
     <style>
         * {
             touch-action: none;
-            -ms-touch-action:none;
+            -ms-touch-action: none;
         }
 
         ::-webkit-scrollbar {
@@ -117,22 +117,6 @@
 
             if (mobileAndTabletcheck()) {
                 //  移动设备
-                console.log(mobilePlatform)
-                mobilePlatform();
-            } else {
-                //  pc
-                var scroll = function (e) {
-                    var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) || // chrome & ie
-                        (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1)); // firefox
-                    documentScroll(delta > 0);
-                    return false;
-                }
-                $(document.body).on('mousewheel DOMMouseScroll ', _.debounce(scroll, 250, {
-                    'maxWait': 1
-                }))
-            }
-
-            function mobilePlatform() {
                 $('.fullscreen').on("touchstart", function (e) {
                     // 判断默认行为是否可以被禁用
                     if (e.cancelable) {
@@ -169,6 +153,17 @@
                     //单击
                     else {}
                 });
+            } else {
+                //  pc
+                var scroll = function (e) {
+                    var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) || // chrome & ie
+                        (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1)); // firefox
+                    documentScroll(delta > 0);
+                    return false;
+                }
+                $(document.body).on('mousewheel DOMMouseScroll ', _.debounce(scroll, 250, {
+                    'maxWait': 1
+                }))
             }
             // 文档滚动
             function documentScroll(direction) {
