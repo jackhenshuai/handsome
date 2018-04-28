@@ -1,0 +1,42 @@
+@media only screen and (max-width: 767px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+body {
+    background: white;
+}
+
+.article .ui.secondary.pointing.menu {
+    border-bottom-width: 0;
+}
+
+.article .ui.navigator {
+    margin: 0 0 1rem;
+
+}
+
+.article .navigator .ui.segment {
+    border-width: 0;
+}
+
+
+.article .header.item img.logo {
+    width: 4rem !important;
+    transform: translateX(-50%);
+}
+
+.article .column {
+    padding: 1rem !important;
+}
+
+.article .card {
+    box-shadow: 0px 2px 9px #ccc !important;
+    width: 100% !important;
+}
+
+.article .noradius {
+    border-radius: 0 !important;
+
+}
