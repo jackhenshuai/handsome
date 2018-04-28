@@ -127,9 +127,7 @@
                     }
                     startX = e.originalEvent.changedTouches[0].pageX,
                         startY = e.originalEvent.changedTouches[0].pageY;
-                    setTimeout(() => {
-                        alert('出没了')
-                    }, 1000);
+
                 });
                 $('.fullscreen').on("touchend", function (e) {
                     // 判断默认行为是否可以被禁用
@@ -146,15 +144,24 @@
 
                     if (Y > 0) {
                         documentScroll(true)
-                        // alert("下")
+                        setTimeout(() => {
+                            alert('下')
+                        }, 1000);
                     }
                     //上滑
                     else if (Y < 0) {
-                        // alert("上")
+                        // alert("")
                         documentScroll(false)
+                        setTimeout(() => {
+                            alert('上')
+                        }, 1000);
                     }
                     //单击
-                    else {}
+                    else {
+                        setTimeout(() => {
+                            alert('单击')
+                        }, 1000);
+                    }
                 });
             } else {
                 //  pc
