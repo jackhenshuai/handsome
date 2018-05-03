@@ -24,7 +24,7 @@ body {
 
 .article .header.item img.logo {
     width: 4rem !important;
-    transform: translateX(-50%);
+    /* transform: translateX(-50%); */
 }
 
 .article .column {

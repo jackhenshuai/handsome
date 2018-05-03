@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- <html lang="en" onmousewheel='return false'> -->
 
 <head>
     <meta charset="UTF-8">
@@ -9,138 +10,234 @@
     <!-- <link rel="stylesheet" href="assets/SemanticUI/components/reset.min.css"> -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="assets/SemanticUI/semantic.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
     <script src="assets/library/jquery.min.js"></script>
     <script src="assets/SemanticUI/semantic.js"></script>
+    <!-- <script src="https://cdn.bootcss.com/lodash.js/4.17.5/lodash.core.min.js"></script> -->
+    <!-- <script src="https://cdn.bootcss.com/lodash.js/4.17.5/lodash.fp.min.js"></script> -->
+    <script src="https://cdn.bootcss.com/lodash.js/4.17.5/lodash.min.js"></script>
+    <script src="assets/library/mobileAndTabletcheck.js"></script>
     <title>lyl的大公鸡</title>
+    <style>
+        * {
+            touch-action: none;
+            -ms-touch-action: none;
+        }
 
+        ::-webkit-scrollbar {
+            width: 0px;
+            height: 1px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .fullscreen {
+            height: 100vh;
+
+        }
+
+        .red {
+            background-color: #DB2828;
+        }
+
+        .green {
+            background-color: #21BA45;
+        }
+
+        .blue {
+            background-color: #2185D0;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="article ">
-        <!-- <div class="ui navigator pusher "> -->
+    <!-- -->
+    <div class="fullscreen  red">
+        <div class="article animated  bounceInUp">
             <div class="ui navigator sticky">
                 <div class="ui  segment noradius">
-                    <div class="ui text container">
-                        <div class="ui  secondary pointing menu">
-                            <div class="header item">
-                                <img class="logo" src="assets/images/logo.png">
-                            </div>
-                            <div class="right three menu">
-                                <a href="about.html" class="grey item">关于</a>
-                                <a href="#" class="activeitem grey item">作品</a>
-                                <a href="#" class="grey item">文章</a>
-                                <a href="mailto:547705038@qq.com?subject=来自github pages" class="grey item">联系作者</a>
-                            </div>
+                    <div class="ui  secondary pointing menu">
+                        <div class="header item">
+                            <img class="logo" src="assets/images/logo.png">
                         </div>
-                    </div>
-                </div>
-            </div>
-        <!-- </div> -->
-
-
-        <div class="ui container body animated  bounceInUp" id="context">
-            <div class="ui three column doubling stackable grid container">
-                <div class="column">
-                    <div class="ui link cards centered">
-                        <div class="ui inverted dimmer">
-                            <div class="ui loader"></div>
-                        </div>
-                        <div class="card noradius">
-                            <div class="image">
-                                <img class="noradius " src="assets/images/img.png">
-                            </div>
-                            <div class="content">
-                                <div class="header">大鸡公</div>
-                                <div class="description">本人画的大鸡公，是不是很帅</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="ui link cards centered">
-                        <div class="ui inverted dimmer">
-                            <div class="ui loader"></div>
-                        </div>
-                        <div class="card noradius">
-                            <div class="image">
-                                <img class="noradius" src="assets/images/img.png">
-                            </div>
-                            <div class="content">
-                                <div class="header">大鸡公</div>
-                                <div class="description">本人画的大鸡公，是不是很帅</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="ui link cards centered">
-                        <div class="ui inverted dimmer">
-                            <div class="ui loader"></div>
-                        </div>
-                        <div class="card noradius">
-                            <div class="image">
-                                <img class="noradius" src="assets/images/img.png">
-                            </div>
-                            <div class="content">
-                                <div class="header">大鸡公</div>
-                                <div class="description">本人画的大鸡公，是不是很帅</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="ui link cards centered">
-                        <div class="ui inverted dimmer">
-                            <div class="ui loader"></div>
-                        </div>
-                        <div class="card noradius">
-                            <div class="image">
-                                <img class="noradius" src="assets/images/img.png">
-                            </div>
-                            <div class="content">
-                                <div class="header">大鸡公</div>
-                                <div class="description">本人画的大鸡公，是不是很帅</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="ui link cards centered">
-                        <div class="ui inverted dimmer">
-                            <div class="ui loader"></div>
-                        </div>
-                        <div class="card noradius">
-                            <div class="image">
-                                <img class="noradius" src="assets/images/img.png">
-                            </div>
-                            <div class="content">
-                                <div class="header">大鸡公</div>
-                                <div class="description">本人画的大鸡公，是不是很帅</div>
-                            </div>
+                        <div class="right three menu">
+                            <a href="#" class="activeitem grey item">关于</a>
+                            <a href="product.html" class=" grey item">作品</a>
+                            <a href="article.html" class="grey item">文章</a>
+                            <a href="mailto:547705038@qq.com?subject=来自github pages" class="grey item">联系作者</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="fullscreen  green">
+        <div class="ui text center aligned container ">
+            <h1>page2</h1>
+        </div>
+    </div>
+    <div class="fullscreen  blue">
+        <div class="ui text center aligned container">
+            <h1>page3</h1>
+        </div>
+    </div>
+    </div>
     <!-- -->
     <script>
+        var array = [1, 2, 3, 4];
+        console.log(array)
+        console.log(_.drop(array, 2));
+        console.log(_.dropRight(array))
+
+        var users = [{
+                'user': 'barney',
+                'active': true
+            },
+            {
+                'user': 'fred',
+                'active': false
+            },
+            {
+                'user': 'pebbles',
+                'active': false
+            }
+        ];
+
+        console.log(_.dropRightWhile(users, function (o) {
+            return !o.active;
+        }))
+        console.log(_.dropRightWhile(users, {
+            'user': 'pebbles',
+            'active': false
+        }))
+        console.log(_.dropWhile(users, function (o) {
+            return !o.active;
+        }))
+        console.log(_.fill(users, {
+            a: 'a'
+        }))
+
+        console.log(_.fromPairs([
+            ['a', 1],
+            ['b', 2],
+            ['b', 3]
+        ]))
+        console.log(_.head([0, 123, 345]))
+        console.log(_.initial([1,  2,  3, 4]))
+        console.log(_.intersection([1, 2, 3], [3, 5, 6, 2]))
+        console.log(_.intersectionBy([2.1, 1.2], [2.3, 3.4], Math.floor))
+        document.body.addEventListener("DOMMouseScroll", function (event) {
+            event.stopPropagation();
+            event.preventDefault();
+        });
+        document.body.onmousewheel = function (event) {
+            event.stopPropagation();
+            event.preventDefault();
+        };
+
         $(function () {
             $('img.logo').hover(function () {
                 $(this).parent().addClass('animated jello')
             }, function () {
                 $(this).parent().removeClass('animated jello')
             });
-            $('.ui.cards').dimmer('show')
-            $('img').load(function () {
-                var $this = $(this);
-                $this.parentsUntil('.column', '.cards').dimmer('hide')
-            });
+            $(window).load(function () {
+                console.log('加载完成')
+                // $('html,body').scrollTop(0)
+                $("html,body").animate({
+                    "scrollTop": 0
+                }, 'fast')
+            })
+            var fullscreenHeight = $('.fullscreen').height();
 
-            $('.ui.sticky').sticky({context: '#context'});
+
+
+            if (mobileAndTabletcheck()) {
+                //  移动设备
+                $('.fullscreen').on("touchstart", function (e) {
+                    // 判断默认行为是否可以被禁用
+                    if (e.cancelable) {
+                        // 判断默认行为是否已经被禁用
+                        if (!e.defaultPrevented) {
+                            e.preventDefault();
+                        }
+                    }
+                    startX = e.originalEvent.changedTouches[0].pageX,
+                        startY = e.originalEvent.changedTouches[0].pageY;
+
+                });
+                $('.fullscreen').on("touchend", function (e) {
+                    // 判断默认行为是否可以被禁用
+                    if (e.cancelable) {
+                        // 判断默认行为是否已经被禁用
+                        if (!e.defaultPrevented) {
+                            e.preventDefault();
+                        }
+                    }
+                    moveEndX = e.originalEvent.changedTouches[0].pageX,
+                        moveEndY = e.originalEvent.changedTouches[0].pageY,
+                        X = moveEndX - startX,
+                        Y = moveEndY - startY;
+
+                    if (Y > 0) {
+                        documentScroll(true)
+
+                    }
+                    //上滑
+                    else if (Y < 0) {
+                        // alert("")
+                        documentScroll(false)
+
+                    }
+                    //单击
+                    else {
+
+                    }
+                });
+            } else {
+                //  pc
+                var scrolled = 0;
+                var scroll = function (e) {
+                    // fixed mac 触摸板bug
+                    if ((new Date()).getTime() - scrolled > 1500) {
+                        var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) || // chrome & ie
+                            (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1)); // firefox
+
+                        documentScroll(delta > 0);
+                    }
+                    return false;
+                }
+                $(document.body).on('mousewheel DOMMouseScroll ', _.debounce(scroll, 250, {
+                    maxWait: 0
+                }))
+                // $(document.body).on('mousewheel DOMMouseScroll ', scroll)
+            }
+            // 文档滚动
+            function documentScroll(direction) {
+                scrolled = (new Date()).getTime();
+                var top = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+                if (top % fullscreenHeight) {
+                    return;
+                }
+
+                var origin = top;
+                if (direction) {
+                    // 向上滚
+                    top = top === 0 ? top : top - fullscreenHeight;
+                } else {
+                    // 向下滚
+                    top = top >= 2 * fullscreenHeight ? top : top + fullscreenHeight;
+                }
+                origin !== top && $("html,body").animate({
+                    "scrollTop": top
+                })
+            }
         });
     </script>
 </body>
